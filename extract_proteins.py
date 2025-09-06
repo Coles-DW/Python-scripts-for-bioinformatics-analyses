@@ -1,9 +1,9 @@
 from Bio import SeqIO
 
 # Input files with full Windows paths
-fasta_file = r"C:\Users\donov\OneDrive\Myrtle rust 2025\Hyperparasite RNA-seq\Extracting protein sequences from fasta\All_Unigene.fa.transdecoder.pep"
-gene_id_file = r"C:\Users\donov\OneDrive\Myrtle rust 2025\Hyperparasite RNA-seq\Extracting protein sequences from fasta\genes_of_interest.txt"
-output_file = r"C:\Users\donov\OneDrive\Myrtle rust 2025\Hyperparasite RNA-seq\Extracting protein sequences from fasta\matched_proteins.fasta"
+fasta_file = r"amino_acid.fasta"
+gene_id_file = r"genes_of_interest.txt"
+output_file = r"matched_proteins.fasta"
 
 # Load gene IDs into a set
 with open(gene_id_file) as f:
@@ -19,3 +19,4 @@ matched_records = [
 SeqIO.write(matched_records, output_file, "fasta")
 
 print(f"Extracted {len(matched_records)} matching sequences to '{output_file}'.")
+
